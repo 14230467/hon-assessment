@@ -1,4 +1,4 @@
-1. Availability SLI (Service Level Indicator)
+1. Availability SLI (Service Level Indicator):
 
 Definition: The proportion of login API requests that succeed out of all valid login requests received over given time window.
 
@@ -7,12 +7,10 @@ Formula:
     Availability SLI = (Successful Login Requests (HTTP 2xx) / Total Valid Login Requests) * 100%
 
 
-2. SLO (Service Level Objective)
-
+2. SLO (Service Level Objective):
 Target: 99.9% of login API requests succeed over a rolling 30-day (monthly) window.
 
-3. Monthly Error Budget Calculation
-
+3. Monthly Error Budget Calculation:
 Error Budget Percentage: 
         100% - 99.9% = 0.1% allowed failed/unavailable requests per month
 
@@ -20,9 +18,9 @@ Time Equivalent
         Total minutes in 30 days:
             30*24*60 = 43200 minutes
         Allowed downtime/errorbudget in time:
-            43200 * 0.001 = 3000 failed requests
+            43200 * 0.001 = 43.2 minutes/month
 
-4. What happens when the Error Budget is Exhausted
+4. What happens when the Error Budget is Exhausted:
 
 Release Freeze/Gating: Non-critical features deployments and risky changes are paused until reliability recovers within  the SLO window.
 Engineering Priority Shift: DEvelopment and SRE efforts shifts from shipping new features to reliability work.
